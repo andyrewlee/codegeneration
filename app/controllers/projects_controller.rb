@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
     project.user = User.find(session[:user_id])
     project.description = params[:description]
     project.code = params[:code]
-    project.name = User.find(params[:name])
+    project.name = params[:name]
 
     if project.save
       redirect_to "/projects/#{project.id}"
