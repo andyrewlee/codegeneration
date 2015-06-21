@@ -4,15 +4,10 @@
     <title>Codegeneration</title>
     <link href="https://bootswatch.com/flatly/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"</script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
-    <style>
-      body {
-        padding-top: 80px ;
-      }
-    </style>
   </head>
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -30,6 +25,7 @@
             <li><a href="/users/new">Register</a></li>
             <li><a href="/sessions/new">Log In</a></li>
             <li><a href="/sessions" data-method="delete">Log Out</a></li>
+            <li><button onclick="constructPage()" class="btn btn-default navbar-btn">Generate</button></li>
           </ul>
         </div>
       </div>
