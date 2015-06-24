@@ -10,15 +10,19 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <h1><%= @editor %></h1>
    <% if !@current_user %>
      <%= render 'shared/nav_logged_out' %>
-   <% elsif @current_user and @editor == 'test'%>
+   <% elsif @current_user and @editor %>
      <%= render 'shared/nav_editor' %>
    <% else %>
      <%= render 'shared/nav_logged_in' %>
    <% end %>
    <div class="container">
+      <% if flash[:errors] %>
+        <% flash[:errors].each do |msg| %> 
+          <p><%= msg %></p>
+        <% end %>
+      <% end %>
       <%= yield %>
     </div>
   </body>
